@@ -13,4 +13,6 @@ function choice (x){
     return choice(userInput); 
  }
 
+let humanScore = 0; 
+let computerScore = 0; 
  console.log(getHumanChoice());
