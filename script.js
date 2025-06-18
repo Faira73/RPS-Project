@@ -35,11 +35,11 @@ function choice (x){
     computerScore += 1;
     return `You lose this round! ${computerChoice} beats ${humanChoice}`;
  }
-    while (true){
+    while (humanScore < 3 && computerScore < 3){
         console.log(playRound()); 
-        if (humanScore === 3 || computerScore === 3)
-            return computerScore === 3 ? 'Computer Wins!' : 'Human Wins!'
+        console.log(`Your Score: ${humanScore} ------ Computer Score: ${computerScore}`);
     }
+    return computerScore === 3 ? 'Computer Wins!' : 'Human Wins!'
  }
 
 
