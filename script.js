@@ -10,23 +10,37 @@ function choice (x){
  }
 // Function to prompt the human to choose
  function getHumanChoice(){
-    let  humanChoice = prompt ("Rock, Paper, or Scissor");
+    let  humanChoice = prompt ('Rock, Paper, or Scissor');
     return choice(humanChoice); 
  }
 
- function playRound(humanChoice, computerChoice){
+ 
+
+ function playGame (){
+    let humanScore = 0; 
+    let computerScore = 0; 
+
+
+    function playRound(){
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
 
     if (humanChoice == computerChoice)
         { return 'Tie!'}
-    if ((humanChoice == "rock" && computerChoice == "scissor") || 
+    if ((humanChoice == 'rock' && computerChoice == 'scissor') || 
         (humanChoice == 'scissor' && computerChoice == 'paper') || 
         (humanChoice == 'paper' && computerChoice == 'rock'))
-        {return `You win! ${humanChoice} beats ${computerChoice}`;}
-    return `You lose! ${computerChoice} beats ${humanChoice}`;
+        {   humanScore += 1;
+            return `You win this round! ${humanChoice} beats ${computerChoice}`;}
+    computerScore += 1;
+    return `You lose this round! ${computerChoice} beats ${humanChoice}`;
+ }
+    while (true){
+        console.log(playRound()); 
+        if (humanScore === 3 || computerScore === 3)
+            return computerScore === 3 ? 'Computer Wins!' : 'Human Wins!'
+    }
  }
 
-let humanScore = 0; 
-let computerScore = 0; 
- console.log(playRound());
+
+ console.log(playGame());
