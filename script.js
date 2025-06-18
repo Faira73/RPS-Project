@@ -25,6 +25,8 @@ function choice (x){
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
 
+    console.log(`you: ${humanChoice} VS. Computer: ${computerChoice}`);
+
     if (humanChoice == computerChoice)
         { return 'Tie!'}
     if ((humanChoice == 'rock' && computerChoice == 'scissor') || 
